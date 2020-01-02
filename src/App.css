@@ -1,0 +1,82 @@
+.page-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.home,
+.second,
+.third {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.home {
+  background: lightcoral;
+}
+.second {
+  background: lightseagreen;
+}
+.third {
+  background: lightslategray;
+}
+
+span {
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 0 20px;
+}
+span:hover {
+  color: white;
+}
+
+@keyframes enterLeft {
+  from {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(0%);
+  }
+}
+
+@keyframes exitLeft {
+  from {
+    transform: translate(0%);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}
+
+@keyframes enterRight {
+  from {
+    transform: translate(100%);
+  }
+  to {
+    transform: translate(0%);
+  }
+}
+
+@keyframes exitRight {
+  from {
+    transform: translate(0%);
+  }
+  to {
+    transform: translate(100%);
+  }
+}
+
+.left.enter {
+  animation: enterLeft 0.5s;
+}
+.left.exit {
+  animation: exitLeft 0.5s;
+}
+.right.enter {
+  animation: enterRight 0.5s;
+}
+.right.exit {
+  animation: exitRight 0.5s;
+}
