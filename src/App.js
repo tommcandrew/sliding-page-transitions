@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Second from './components/Second';
 import Third from './components/Third';
 import { createBrowserHistory } from 'history';
+
 const history = createBrowserHistory();
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   const [homeDirection, setHomeDirection] = useState(null);
   const [secondDirection, setSecondDirection] = useState(null);
   const [thirdDirection, setThirdDirection] = useState(null);
-  const [number, setNumber] = useState(0);
+  const [transitionCount, setTransitionCount] = useState(0);
 
   const updatePageDirections = () => {
     let homeDirection, secondDirection, thirdDirection;
@@ -48,7 +49,7 @@ function App() {
     setHomeDirection(homeDirection);
     setSecondDirection(secondDirection);
     setThirdDirection(thirdDirection);
-    setNumber(number + 1);
+    setTransitionCount(transitionCount + 1);
   };
 
   useEffect(() => {
@@ -65,7 +66,7 @@ function App() {
     }
     history.push(nextPage);
     // eslint-disable-next-line
-  }, [number]);
+  }, [transitionCount]);
 
   return (
     <Router history={history}>
